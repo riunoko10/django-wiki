@@ -1,0 +1,20 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block search %}
+{{ form }}
+{% endblock %}
+
+
+{% block body %}
+    {% if entry %}
+        {{ entry | safe }}
+    {% else %}
+        <p>No se encontro la pagina solicitada </p>
+    {% endif %}
+
+    <a href="{% url 'wiki:edit' title %}">Edit</a>
+{% endblock %}
